@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#game-container {
+    display: inline-block;
+    margin-top: 0;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.note-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 0; /* Space between the canvas and buttons */
+}
+
+.note-buttons button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #bababa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.note-buttons button:hover {
+    background-color: #ddd;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
