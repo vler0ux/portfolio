@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>WEBSCAPE</title>
+    <link rel="stylesheet" href="styles.css">
+  
+  <script>
+    // Redirection automatique après 1 minute
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 30000); // 60000 millisecondes = 1 minute
+  </script>
+</head>
+
+<body>
+  <img src="logo.png" class="center_image"/>
+  
+   
+
+  <main>
+    <section>
+    <h4>Question 6 BONUS</h4> 
+      <div> 
+          <p style="font-size: 1rem;">
+            Here is your question... may the odds be ever in your favor.
+            You have 1 minute to read and answer the questions... tick-tock.
+          </p>
+      </div>
+    </section>
+    <img src="spider.png" class="spider_image"/>
+    <section> 
+      <div> 
+        <button id="increment-btn"> </button>
+      </div>
+      <div class="timer-container">
+        <div id="timer" class="timer">60</div>
+    </div>
+      
+      <p style="font-size: 1rem;">What term refers to a fraudulent email attack?</p>
+      <input type="text" id="answer-input" placeholder="Enter your answer"/>
+     </div> 
+     <div> 
+      <!-- <button id="validate-btn">Submit</button> -->
+      <img src="check.png" alt="Validate" id="validate-btn" class="center_button "  />
+    </div>
+    </section>
+
+    <section> 
+      <div id="message"></div> 
+      <div class="video-container">
+        <video class="center_video" id="correctVideo"  width="640" height="360" controls style="display:none;">
+           <source src="congrats_more.mp4" type="video/mp4">
+      </video>
+      <video class="center_video" id="wrongVideo" width="640" height="360" controls style="display:none;">
+        <source src="incorrect_more.mp4" type="video/mp4">
+    </video>
+    </div>
+    </section>
+
+    <!-- Script pour le timer et le jeu -->
+    <script>
+      // Initialisation du timer
+      let timeLeft = 60; // 60 secondes
+      const timerElement = document.getElementById("timer");
+
+      // Met à jour le timer chaque seconde
+      const timerInterval = setInterval(() => {
+          if (timeLeft > 0) {
+              timeLeft--;
+              timerElement.textContent = timeLeft; // Met à jour l'affichage
+          } else {
+              clearInterval(timerInterval); // Arrête le timer
+              alert("Temps écoulé !");
+          }
+      }, 1000);
+      </script>
+
+  <script>
+    // Réponse correcte
+    const correctAnswer = "pishing";
+
+    // Références des éléments HTML
+    const input = document.getElementById("answer-input");
+    const button = document.getElementById("validate-btn");
+    const message = document.getElementById("message");
+    const correctImage = document.getElementById("correct-answer");
+    const wrongVideo = document.getElementById("wrongVideo");
+
+  
+    // Ajouter un écouteur d'événement sur le bouton
+    button.addEventListener("click", () => {
+      const userAnswer = input.value.trim(); // Récupère et normalise la réponse de l'utilisateur
+      
+      if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+        // Si la réponse est correcte
+        message.textContent = "Correct! Well done!🎉"; 
+        message.style.color = "green"; 
+        correctVideo.style.display = "block"; // Affiche l'image
+        correctVideo.play(); // Lance la lecture de la vidéo
+        setTimeout(() => {
+                    window.location.href = "index.html"; 
+                }, 3000); 
+                document.getElementById("answer-input" ).value = "";
+      } else {
+
+        // Si la réponse est incorrecte
+        message.textContent = "Wrong answer. Try again."; 
+        message.style.color = "red"; 
+        wrongVideo.style.display = "block"; // Affiche la vidéo d'erreur
+       wrongVideo.play(); // Lance la lecture de la vidéo d'erreur
+      setTimeout(() => {
+          window.location.href = "index.html"; // Redirection après 3 secondes
+      }, 3000)}
+      document.getElementById("answer-input" ).value = "";
+    });
+  
+  </script>
+
+  </main>
+
+  <footer>
+    <p style="font-size: 0.9rem;"> © 2024 - Realised by les Digit'All</p>
+  </footer>
+
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>

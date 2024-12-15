@@ -1,0 +1,231 @@
+/* Style global */
+.almendra-regular {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.almendra-bold {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.almendra-regular-italic {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.almendra-bold-italic {
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+    background-image: url('spiderweb.png'); 
+    background-size: cover; /* L'image couvrira tout l'écran */
+    background-position: center center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    height: 100vh;
+    font-family: 'Pixelify Sans', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color:#000000;
+    background-color: #DBDBDB;
+  }
+
+  /* logo centré */
+.center_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+.video-container {
+  position: relative;
+  width: 100%; /* La vidéo prendra toute la largeur */
+  padding-top: 56.25%; /* Ratio 16:9 */
+  max-width: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* La largeur suit celle du conteneur */
+  height: 100%; /* La hauteur est proportionnelle */
+  max-width: 800px; /* Optionnel : une taille maximale pour les grands écrans */
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px; /* Optionnel : coins arrondis pour un style moderne */
+
+
+
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: block;
+  margin: 0 auto; */
+}
+.center_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 150px; /* Ajuste la taille de l'image */
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+  /* Contenu principal */
+  main {
+    padding: 20px;
+    color:#000000;
+  }
+  
+  h1, h3 {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+  }
+  p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+  }
+  
+  
+  section {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    background-color: transparent;
+  }
+  div {
+    margin-bottom:8px;
+  }
+  
+  /* Bouton */
+  /* Bouton avec une image */
+button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2px 4px;
+        border: none;
+        border-radius: 5px;
+        background-color: transparent;
+        cursor: pointer;
+        margin-top: 1px;
+      }
+
+button img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:transparent;
+        width: 100px; /* Ajuste la taille de l'image */
+        height: 100px;
+        vertical-align: middle; /* Centre l'image */
+      }
+
+  input {
+        font-size: 1rem;
+        padding: 8px;
+        width: 90%; /* Largeur adaptée */
+        max-width: 350px; /* Limite maximale */
+      }
+  
+  /* Pied de page */
+  footer {
+    text-align: center;
+    padding: 8px o;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 8px 0;
+  
+  }
+
+
+/* spider effet */
+  @keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+        width: 50px;
+    }
+    50% {
+        transform: scale(1.5);
+        width: 300px; 
+    }
+    100% {
+        transform: scale(1);
+        width: 50px;
+    }
+}
+
+.spider_image {
+  width: 50px; /* Taille initiale */
+  height: auto; /* Respect du ratio */
+  transition: transform 0.3s ease-in-out;
+  animation: zoomEffect 1s ease-in-out 1; /* Lancement unique */
+}
+#message {
+  margin: 0; 
+  font-size: 1rem; /* Taille raisonnable pour une meilleure lisibilité */
+}
+
+#validate-btn {
+  margin-top: 0; /* Réduit l'espace entre le bouton et le message */
+}
+
+.timer-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  font-family: 'Courier New', Courier, monospace, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #DBDBDB, #bababa);
+  padding: 20px 40px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.timer:hover {
+  transform: scale(1.1);
+}
+
+.timer.finished {
+  background: #ff4d4d;
+}

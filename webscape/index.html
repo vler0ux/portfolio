@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>WEBSCAPE</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="scripts.js?v=3"></script>
+</head>
+
+<body>
+
+    <h1>Welcome to exciting game </h1>
+  <main>
+    <div class="center_image" > 
+      <img src="logo.png" alt="Logo" />
+    </div>
+
+    <h2>Please click to discover your destiny ! &#128522; </h2> 
+    
+
+      <section>  
+          <button id="increment-btn">
+              <img src="button.png" alt="Incrémenter" />
+              <audio id="game-sound" src="spideradon.mp3" preload="auto"></audio>
+          </button>
+      <!-- <p id="counter" style="display:none;"></p> -->
+    </section>
+    <script>
+      let count = 0; // Initialisation du compteur
+      const randomClicks = Math.floor(Math.random() * 6) + 1; 
+      const button = document.getElementById("increment-btn");
+      const gameSound = document.getElementById("game-sound");
+      // const counterDisplay = document.getElementById("counter");
+
+      const questionPages = ["q1.html", "q2.html", "q3.html", "q4.html", "q5.html", "q6.html", "q7.html"];
+  
+      button.addEventListener("click", () => {
+        count++; // Incrémentation
+        // counterDisplay.textContent = count; // Mise à jour de l'affichage
+  
+        // redirection vers une nouvelle page
+        if (count === randomClicks) {
+          gameSound.play(); // Joue le son
+          gameSound.addEventListener("ended", () =>{ 
+
+            const randomIndex = Math.floor(Math.random() * questionPages.length); // index aléatoire
+                const randomPage = questionPages.splice(randomIndex, 1)[0]; // Retire la page du tableau
+
+                window.location.href = randomPage; // Redirection vers la page choisie
+           
+          // window.location.href = "q"+count+".html"; // Remplace par ton URL
+        });
+    }
+  });
+    </script>
+  </main>
+
+  <footer>
+    <p style="font-size: 0.9rem;">© 2024 - Realised by Digit'All</p>
+  </footer>
+</body>
+</html>
