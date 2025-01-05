@@ -2,8 +2,8 @@
 #include <HTTPClient.h>
  
 const char* ssid = "Lili";
-const char* password = "lili3108";
-const char* url = "http://192.168.43.170:3000/cible/"; // Remplace par l'URL du serveur
+
+const char* url = "http://192.168.00.00:3000/cible/"; // Remplace par l'URL du serveur
  
 volatile bool restartLoop = false;  // Variable pour gérer l'interruption
  
@@ -49,7 +49,7 @@ void loop() {
     if (restartLoop) {
         restartLoop = false;
         Serial.println("Interruption détectée, redémarrage de la boucle.");
-        return;  // Revenir immédiatement au début de loop()
+        return;  /
     }
  
     // Lire la valeur du capteur de lumière
@@ -99,14 +99,14 @@ void loop() {
  
     // Contrôler la LED en fonction de c1activated
     if (c1activated) {
-        digitalWrite(ledPin, LOW);  // Éteindre la LED (indique détection du laser ou faible lumière)
+        digitalWrite(ledPin, LOW);  
         Serial.println("LED éteinte (Laser capté ou faible lumière prolongée).");
     } else {
-        digitalWrite(ledPin, HIGH);  // Allumer la LED (indique qu'il n'y a pas de faible lumière)
+        digitalWrite(ledPin, HIGH);  
         Serial.println("LED allumée (Lumière normale).");
     }
  
-    delay(100);  // Attendre 100 ms avant la prochaine boucle
+    delay(100);  /
  
     Serial.println("Cycle terminé.");
 }
